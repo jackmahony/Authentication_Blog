@@ -1,0 +1,7 @@
+<h1>View post</h1>
+        <h2><%= @post.title %></h2>
+        <p><%= @post.body %></p>
+        <span><%= @post.user.email%></span>
+        <br>
+        <%= link_to "Back to all posts", posts_index_path %> 
+    </ul>

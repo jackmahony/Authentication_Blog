@@ -1,0 +1,18 @@
+<h1>A list of posts</h1>
+<div class = "button">
+    <%= link_to "Create a new post", new_post_path %> 
+</div>
+<div>
+<% @posts.each do |post| %>
+    <ul>
+        <h3><%= post.title %></h2>
+        <p><%= post.body %></p>
+        <span><%= post.user.email%></span>
+        <br>
+        <span><%= link_to "View", post_path(post) %>
+        <% if post.user == Current.user%>
+            <span><%= link_to "edit", edit_post_path(post) %>
+        <% end %>
+    </ul>
+<% end %>
+</div>
